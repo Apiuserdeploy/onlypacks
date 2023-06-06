@@ -1,12 +1,12 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Navbar from './components/navbar/Navbar'
-import Navegacion from './components/navegacion/Navegacion'
+import Navbar from './components/navbar/Navbar';
+import Navegacion from './components/navegacion/Navegacion';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'YouPacks',
+  title: 'YouPaks',
   description: 'Los mejores packs por mega, mediafire, The best packs by mega, mediafire',
 }
 

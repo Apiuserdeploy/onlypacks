@@ -1,23 +1,32 @@
 "use client"
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Navpage from "../components/navPage/Navpage";
+// import { products } from "@/public/products";
+import { IconShopping } from "@/public/svg-icons"
 
-
-
-export default async function page() {
-    const amazonlink = "//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=02482-20&language=es_US&marketplace=amazon&region=US&placement=B07HZ4N76W&asins=B07HZ4N76W&linkId=6ea91095e7b21304a595e5497ac74141&show_border=true&link_opens_in_new_window=true&rel=nofollow";
+export default function Page() {
 
     return (
-        <div>
-            
-            <iframe
-                sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin"
-                style={{ width: "200px", height: "240px" }}
-                marginWidth={0}
-                marginHeight={0}
-                scrolling="no"
-                frameBorder={0}
-                src={amazonlink}
-            />
+        <div className="py-5 px-5 md:px-24 min-w-[270px]">
+
+            <Navpage />
+{/* 
+            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8 mt-10">
+                {products.map((product, index) => (
+                    <a key={index} href={product.linkUrl} className="group" target="_blank" rel="noopener">
+                        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                            <img src={product.imgUrl} alt="Imagen del producto" className="h-full w-full object-cover object-center group-hover:opacity-95" />
+                        </div>
+                        <h3 className="mt-4 text-sm text-gray-300">{product.name}</h3>
+                        <p className="mt-1 text-lg font-medium text-slate-200">US$ <span className="line-through text-green-600">{product.price + 1}</span> {product.price}</p>
+                        <button className="mt-1 rounded-full w-full py-1 bg-orange-500 hover:bg-orange-400 font-medium flex items-center justify-center gap-x-1">
+                            {product.platform} <IconShopping/>
+                        </button>
+                    </a>
+                ))}
+            </div> */}
 
         </div>
-    )
+    );
 }

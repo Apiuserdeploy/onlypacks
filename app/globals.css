@@ -11,3 +11,13 @@
 body {
   background-color: black;
 }
+
+.scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Oculta la barra de desplazamiento en navegadores que la admiten */
+  -ms-overflow-style: none; /* Oculta la barra de desplazamiento en Internet Explorer y Microsoft Edge */
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none; /* Oculta la barra de desplazamiento en navegadores basados en WebKit */
+}
