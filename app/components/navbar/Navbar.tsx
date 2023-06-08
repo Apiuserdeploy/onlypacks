@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { IconBars, IconCamara, IconMagnifying, IconMark } from "@/public/svg-icons";
+import { IconBars, IconCamara, IconMagnifying, IconMark } from "@/public/svgIcons";
         
 export default function Navbar() {
 

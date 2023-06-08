@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Navpage from "../components/navPage/Navpage";
 // import { products } from "@/public/products";
-import { IconShopping } from "@/public/svg-icons"
+import { IconShopping } from "@/public/svgIcons"
 
 export default function Page() {
 

@@ -9,36 +9,18 @@ export async function GET(request: Request) {
     try {
         await connectMongoDb();
 
-        const regex = new RegExp(searchTerm, 'i'); // Crear una expresión regular con el término de búsqueda (ignorando mayúsculas y minúsculas)
-
-        console.time('DB Query'); // Iniciar el temporizador
-
-        const images = await Images.find({
-            $or: [
-                {category: regex }, // Buscar por actriz (coincidencia parcial)
-                {name: regex }, // Buscar por actriz (coincidencia parcial)
-                {actress: regex }, // Buscar por actriz (coincidencia parcial)
-                {labels: regex }, // Buscar por actriz (coincidencia parcial)
-            ]
-        });
-
-        console.timeEnd('DB Query'); // Detener el temporizador y mostrar el tiempo transcurrido
-
-        // const images = await Images.aggregate([
-        //     {
-        //       $match: {
-        //         $or: [
-        //           { category: { $regex: searchTerm, $options: 'i' } },
-        //           { name: { $regex: searchTerm, $options: 'i' } },
-        //           { actress: { $regex: searchTerm, $options: 'i' } },
-        //           { labels: { $regex: searchTerm, $options: 'i' } }
-        //         ]
-        //       }
-        //     }
-        //   ]).exec();
-
-
-
+        const images = await Images.aggregate([
+            {
+                $match: {
+                    $or: [
+                        { category: { $regex: searchTerm, $options: 'i' } },
+                        { name: { $regex: searchTerm, $options: 'i' } },
+                        { actress: { $regex: searchTerm, $options: 'i' } },
+                        { labels: { $regex: searchTerm, $options: 'i' } }
+                    ]
+                }
+            }
+        ]);
 
         return NextResponse.json({ "status": "success", "data": images });
 

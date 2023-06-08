@@ -1,5 +1,5 @@
 "use client"
-import { IconAdjustments, IconTrend } from '@/public/svg-icons'
+import { IconAdjustments, IconTrend } from '@/public/svgIcons'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
