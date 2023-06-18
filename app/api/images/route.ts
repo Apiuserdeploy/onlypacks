@@ -14,7 +14,6 @@ export async function GET(request: Request) {
                 $match: {
                     $or: [
                         { category: { $regex: searchTerm, $options: 'i' } },
-                        { name: { $regex: searchTerm, $options: 'i' } },
                         { actress: { $regex: searchTerm, $options: 'i' } },
                         { labels: { $regex: searchTerm, $options: 'i' } }
                     ]

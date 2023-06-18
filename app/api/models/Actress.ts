@@ -1,29 +1,29 @@
 import { Schema, model, models } from "mongoose";
 
 /* Creating a schema for the database. */
-const imagesSchema = new Schema({
+const actressSchema = new Schema({
     category: {
         type: String,
         required: true,
-        index: true
     },
     actress: {
         type: String,
         required: true,
-        index: true
     },
-    labels: {
+    images: {
         type: Object,
         required: true,
-        index: true
     },
-    image: {
-        type: String,
+    actressid: {  
+        type: Schema.Types.ObjectId, 
         required: true,
-    },
+        ref: 'Images',
+        index: true,
+        unique: true
+    }
 },{
-    timestamps: true,
+    timestamps: false,
     versionKey: false
 });
 
-export default models.Images || model("Images", imagesSchema)
+export default models.Actress || model("Actress", actressSchema)

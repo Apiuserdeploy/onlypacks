@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {trailingSlash: true,}
-
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.onlypaks.com',
+            },
+        ],
+    }
+}
 
 module.exports = nextConfig

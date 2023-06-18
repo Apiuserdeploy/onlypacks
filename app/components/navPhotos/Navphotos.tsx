@@ -1,12 +1,18 @@
 "use client"
-import { IconAdjustments, IconTrend } from '@/public/svgIcons'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
+import { IconAdjustments, IconTrend } from '@/public/svgIcons'
+import { NavProps } from '@/app/interfaces/NavProps';
 
-export default function Navpage() {
+const Navfotos: React.FC<NavProps> = ({title}) => {
 
-    const platform = [{ name: "Todos" }, { name: "Amazon" }, { name: "Ebay" }]
+
+    const platform = [{ name: "Categorias", route: "/photos" }, { name: "Nuevo", route: "/new" }, { name: "Popular", route: "/popular" }]
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname()
+    // Obtiene el objeto router
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -14,7 +20,7 @@ export default function Navpage() {
 
     return (
         <>
-            <h1 className="text-gray-300 text-sm md:text-xl font-medium flex items-center gap-x-2">Juguetes y Juegos para Adultos
+            <h1 className="text-gray-300 text-base md:text-xl font-medium flex items-center gap-x-2">{title}
                 <IconTrend />
             </h1>
 
@@ -25,8 +31,8 @@ export default function Navpage() {
                         <IconAdjustments />
                     </button>
 
-                    {platform.map(({ name }) => (
-                        <Link className="flex-1 text-white text-sm rounded-lg border-2 border-neutral-800 p-1.5" aria-current="location" href={name}>{name}</Link>
+                    {platform.map(({ route, name }) => (
+                        <Link key={name} className={` ${pathname === route ? 'bg-neutral-800' : ''} ${'flex-1 text-white text-sm rounded-lg border-2 border-neutral-800 p-1.5'} `} aria-current="location" href={route}>{name}</Link>
                     ))} 
 
                 </div>
@@ -45,3 +51,5 @@ export default function Navpage() {
         </>
     )
 }
+
+export default Navfotos
