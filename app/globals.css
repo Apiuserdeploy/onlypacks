@@ -25,3 +25,19 @@ body {
 .thumbwook{
   background: rgba(0,0,0,.35);
 }
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  transition: transform 500ms;
+  transform: translateX(-200px);
+}
+
+.app.open .sidebar {
+  transform: translateX(0);
+}

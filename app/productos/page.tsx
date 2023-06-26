@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Navpage from "../components/navPage/Navpage";
+
 // import { products } from "@/public/products";
 import { IconShopping } from "@/public/svgIcons"
 
@@ -10,7 +10,7 @@ export default function Page() {
     return (
         <div className="py-5 px-5 md:px-24 min-w-[270px]">
 
-            <Navpage />
+            {/* <Navpage /> */}
 {/* 
             <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 xl:gap-x-8 mt-10">
                 {products.map((product, index) => (

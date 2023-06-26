@@ -5,28 +5,32 @@ import { usePathname } from 'next/navigation';
 
 export default function Navegacion() {
 
-    const pathname = usePathname()
-
-    const routeName = [{ name: "CASEROS", route: "/" }, { name: "FOTOS", route: "/photos" }, { name: "EN VIVO", route: "/live" }, { name: "PRODUCTOS", route: "/products" }]
+    const routeName = [
+        { name: "CASEROS", route: "/" },
+        { name: "FOTOS", route: "/photos" },
+        { name: "EN VIVO", route: "/live" },
+        { name: "PRODU", route: "/produ" }
+    ];
 
     const getRouteClass = (route: string) => {
+        const pathname = usePathname()
+
         if (pathname === route) {
             return 'border-b-2 border-amber-500';
-        } else if (
-            (pathname === '/photos' || pathname === '/new' || pathname === '/popular') &&
-            route === '/photos'
-        ) {
+        } else if ((pathname === '/photos' || pathname === '/new' || pathname === '/popular') && route === '/photos') {
             return 'border-b-2 border-amber-500'
         }
         return ''
-     }
+    }
 
     return (
-        <div className='bg-zinc-950 min-w-[270px] mt-1 px-5 md:px-24'>
+        <div className='bg-zinc-950 mt-1 min-w-[260px] sm:px-10 md:px-14 lg:px-52 xl:px-64'>
             <ul className="flex justify-evenly">
-                {routeName.map(({ route, name }) => (
-                    <li className={`${getRouteClass(route)} py-1.5 px-3 sm:px-10 md:px-16`} key={route}>
-                        <Link className="text-white hover:text-white text-[10px] md:text-xs whitespace-nowrap" aria-current="location" href={route}>{name}</Link>
+                {routeName.map((route) => (
+                    <li className={`${getRouteClass(route.route)} w-full hover:bg-neutral-800`} key={route.route}>
+                        <Link className='text-white text-[10px] md:text-xs whitespace-nowrap flex justify-center py-3' aria-current="location" href={route.route}>
+                            {route.name}
+                        </Link>
                     </li>
                 ))}
             </ul>
