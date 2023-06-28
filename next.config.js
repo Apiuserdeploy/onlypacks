@@ -4,7 +4,11 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'images.onlypaks.com',
+                hostname: 'images.onlypaks.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'visual.onlypaks.com'
             },
         ],
     }

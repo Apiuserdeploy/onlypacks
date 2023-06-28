@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/navPhotos/Navphotos.tsx", "app/photos/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/navPhotos/Navphotos.tsx", "app/photos/page.tsx", "app/not-found.tsx"],
   "exclude": ["node_modules"]
 }

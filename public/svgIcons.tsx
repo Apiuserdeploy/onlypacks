@@ -12,10 +12,12 @@ export const IconBars = () => (
     </svg>
 )
 
-export const IconMark = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#f59e0b" width="30px" height="30px">
+export const IconMark = () => (    
+
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="#f59e0b" width="30px" height="30px">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
+
 )
 
 export const IconFire = ({ color, width, height }: IconPhotoProps) => (
@@ -41,8 +43,8 @@ export const IconInformation = ({ color, width, height }: IconPhotoProps) => (
     </svg>
 )
 
-export const IconCloudUp = ({ color, width, height }: IconPhotoProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill={color} width={width} height={height}>
+export const IconCloudUp = ({ className, color, width, height }: IconPhotoProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg"  className={className} viewBox="0 0 24 24" fill={color} width={width} height={height}>
         <path fillRule="evenodd" d="M10.5 3.75a6 6 0 00-5.98 6.496A5.25 5.25 0 006.75 20.25H18a4.5 4.5 0 002.206-8.423 3.75 3.75 0 00-4.133-4.303A6.001 6.001 0 0010.5 3.75zm2.03 5.47a.75.75 0 00-1.06 0l-3 3a.75.75 0 101.06 1.06l1.72-1.72v4.94a.75.75 0 001.5 0v-4.94l1.72 1.72a.75.75 0 101.06-1.06l-3-3z" clipRule="evenodd" />
     </svg>
 )
@@ -53,8 +55,8 @@ export const IconUser = ({ color, width, height }: IconPhotoProps) => (
     </svg>
 )
 
-export const IconUserPlus = ({ color, width, height }: IconPhotoProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill={color} width={width} height={height}>
+export const IconUserPlus = ({ className, color, width, height }: IconPhotoProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className={className} fill={color} width={width} height={height}>
         <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
     </svg>
 )

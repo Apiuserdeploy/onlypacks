@@ -6,7 +6,7 @@ import Navegacion from './components/navegacion/Navegacion';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'YouPaks',
+  title: 'onlyPaks',
   description: 'Los mejores packs por mega, mediafire, The best packs by mega, mediafire',
 }
 
