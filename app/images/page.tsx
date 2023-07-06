@@ -4,12 +4,33 @@ import Navphotos from "../components/navPhotos/Navphotos";
 import { CategoryProps } from "../interfaces/CategoryProps";
 
 const fetchCategory = async () => {
-  const res = await fetch(`${process.env.HOST_NAME}/api/category`, {
-    next: { revalidate: 10 },
-    headers: { "x-access-token": `${process.env.TOKEN_API}` },
-  });
+  
+   // Configurar los encabezados de la solicitud
+   const myHeaders = new Headers();
+   myHeaders.append("Content-Type", "application/json");
+   myHeaders.append("Access-Control-Request-Headers", "*");
+   myHeaders.append("api-key", "qxVje0EsNs99LA9l56EDRPdPc8QKLtetml1YcmzoaLDxBiGrIIChyLOXi81AByzo");
+ 
+   // Configurar el cuerpo de la solicitud
+   const raw = JSON.stringify({
+     "collection": "categories",
+     "database": "onlypacks",
+     "dataSource": "onlypacks"
+   });
+ 
+   // Configurar las opciones de la solicitud
+   const requestOptions = {
+     method: 'POST',
+     headers: myHeaders,
+     body: raw,
+     redirect: 'follow' as RequestRedirect // Ajustar el tipo de redirect
+   };
+ 
+   // Realizar la solicitud
+   const res = await fetch("https://data.mongodb-api.com/app/data-bbmcp/endpoint/data/v1/action/find", requestOptions);
 
   const categories = await res.json()
+
 
   if (!res.ok) {
     // If there is a server error, you might want to
@@ -17,12 +38,12 @@ const fetchCategory = async () => {
     throw new Error(`Failed to fetch posts, received status ${res.status}`)
   }
 
-  return categories.data as CategoryProps[]
+  return categories.documents as CategoryProps[]
 };
 
 export default async function Page() {
 
-  const categories = await fetchCategory()
+  const categories = await fetchCategory();
 
   return (
     <div className="py-5 px-5 md:px-14 lg:px-24 xl:px-32 min-w-[275px]">
