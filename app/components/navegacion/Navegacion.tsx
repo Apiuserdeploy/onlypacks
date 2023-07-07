@@ -5,6 +5,8 @@ import { usePathname } from 'next/navigation';
 
 export default function Navegacion() {
 
+    const pathname = usePathname()
+    
     const routeName = [
         { name: "CASEROS", route: "/" },
         { name: "IMAGENES", route: "/images" },
@@ -13,7 +15,7 @@ export default function Navegacion() {
     ];
 
     const getRouteClass = (route: string) => {
-        const pathname = usePathname()
+  
 
         if (pathname === route) {
             return 'border-b-2 border-amber-500';
