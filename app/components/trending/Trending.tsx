@@ -68,7 +68,7 @@ export default function Trending() {
                     </div>
                 )}
 
-                <ul ref={containerRef} className="scrollbar flex whitespace-nowrap overflow-x-auto">
+                <ul ref={containerRef} className="scrollbar flex whitespace-nowrap overflow-x-auto touch-pan-x">
                     {navRoute.map(({ route, name }) => (
                         <li className="bg-zinc-950 hover:bg-neutral-800 rounded-full border-2 border-neutral-800 mr-2 md:mr-3 px-3 md:px-5 py-1.5" key={name}>
                             <Link className="text-white text-sm sm:text-base whitespace-nowrap" aria-current="location" href={route}>{name}</Link>
